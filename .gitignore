@@ -182,3 +182,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm,windows,macos,linux
+Webpage/.idea/Webpage.iml
+Webpage/.idea/modules.xml
+Webpage/.idea/vcs.xml
+Webpage/.idea/workspace.xml
