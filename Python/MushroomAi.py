@@ -19,9 +19,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
           print('Connected by', addr)
           while True:
               data = conn.recv(1024).decode()
-              print("../" + data)
               if not data:
                   break
-              print(learner.predict("../" + data)[0]);
-              conn.sendall(bytes("" + learner.predict("../" + data)[0], "utf-8"))
+              print("../" + data)
+              predict = learner.predict("../" + data)
+              index = predict[1].item();
+              print(predict[0] + " - " + ("{:.2f}".format(predict[2][index].item() * 100) + "%"))
+              conn.sendall(bytes(predict[0] + " - " + ("{:.2f}".format(predict[2][index].item() * 100) + "%") , "utf-8"))
 
